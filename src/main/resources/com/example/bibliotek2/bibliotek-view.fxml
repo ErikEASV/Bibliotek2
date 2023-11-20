@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotek2.BibliotekController">
+    <left>
+        <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="224.0" prefWidth="100.0" BorderPane.alignment="BOTTOM_LEFT">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="110.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="insertBook" mnemonicParsing="false" onAction="#insertBookHandler" prefWidth="100.0" text="Opret bog" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#sletBog" prefHeight="26.0" prefWidth="100.0" text="Slet bog" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#findBog" prefHeight="26.0" prefWidth="99.0" text="Find bog" />
+            <Button graphicTextGap="1.0" mnemonicParsing="false" onAction="#visAlleBøger" prefHeight="26.0" prefWidth="100.0" text="Alle bøger" GridPane.rowIndex="1" />
+            </children>
+        </GridPane>
+    </left>
+    <bottom>
+        <Pane fx:id="område" prefHeight="103.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+        <TextArea fx:id="meddelelse" prefHeight="93.0" prefWidth="535.0" />
+    </bottom>
+    <top>
+        <Label text="Demo Biblioteksdatabase2" BorderPane.alignment="CENTER" />
+    </top>
+    <center>
+        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="bogtabel" layoutX="32.0" layoutY="37.0" onMouseClicked="#klikPåRække" prefHeight="241.0" prefWidth="400.0">
+              <columns>
+                <TableColumn fx:id="isbnkolonne" prefWidth="75.0" text="ISBN" />
+                <TableColumn fx:id="titelkolonne" minWidth="100.0" prefWidth="250.0" text="Titel" />
+                  <TableColumn fx:id="typekolonne" maxWidth="249.0" prefWidth="60.0" text="Type" />
+              </columns>
+            </TableView>
+         </children>
+        </Pane>
+    </center>
+   <padding>
+      <Insets left="30.0" />
+   </padding>
+</BorderPane>
